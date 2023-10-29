@@ -27,6 +27,10 @@ public class CourtReserveServlet extends HttpServlet{
 	 * HttpServletRequest - HTTP 요청 객체, HTTP 요청 메시지에 대한 정보 조회 가능
 	 * HttpServletResponse - HTTP 응답 객체, HTTP 응답 메시지로 활용 가능
 	 */	
+	
+	// http://localhost:8090/frontcontroller1/tennis/reserve?center=YCS&court=2&datetime=2023-10-05T18%3A01 로 접근 시 doGet이 동작한다.
+	// get은 파라미터의 정보를 url에 그대로 노출하기 때문이며, 사용자가 악용하는 것을 방지하기 위해 post로 데이터를 넘겨준다.
+	// 따라서 doGet의 동작으로 인해 error code가 동작한다.
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			final String errorpath = "/WEB-INF/unauthorized.jsp";

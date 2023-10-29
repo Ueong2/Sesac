@@ -35,7 +35,7 @@ public class MouseFrontController extends HttpServlet {
 		//String url = request.getRequestURI();
 		//String contextPath = request.getContextPath();
 		String pathInfo = request.getPathInfo();
-		
+//		System.out.println(pathInfo); 이처럼 path의 정보를 요청할 수 있다.
 		Controller controller = mappedControllerMap.get(pathInfo);
 		if (controller !=null) {
 			controller.process(request, response);
