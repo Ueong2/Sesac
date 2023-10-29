@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    
+    <!-- name attribute의 값은 프로젝트명으로 지정 -->
+    <persistence-unit name ="step01">
+    	<!-- property name -->
+    	<!-- javax.persistence ~로 시작하는 설정 : JPA에서 제공하는 표준 속성 -->
+    	
+    	<!-- 필수 입력 속성 -->
+    	<properties>
+    	<property name = "javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+    	<property name = "javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+    	<property name = "javax.persistence.jdbc.user" value="system"/>
+    	<property name = "javax.persistence.jdbc.password" value="ekseh123"/>
+    	
+		<!--  옵션(선택) 속성 -->
+   		<!-- Hibernate(JPA) 실행 과정에서 Console에 테이블 생성 DDL, DML 등의 SQL문을 출력 -->
+   		<property name="hibernate.show_sql" value="true"/>
+   		
+   		<!-- SQL의 출력 형태 정렬 -->
+   		<property name="hibernate.format_sql" value="true"/>
+   		
+   		<!-- 애플리케이션 실행 시 DB 테이블을 자동으로 생성할 것인지? -->
+   		<!-- create: 기존 테이블이 존재할 경우, 해당 테이블을 제고(DROP), 테이블을 새로 생성, DROP + CREATE-->
+   		<!-- update: DB테이블과 엔티티 맵핑 정보를 비교, 변경된 사항만 수정 -->
+   		<property name="hibernate.hbm2ddl.auto" value="update"/>
+								<!-- 테이블 생성 시에는 value="create"로 설정해야 함 -->
+    	
+    	</properties>
+    </persistence-unit>
+</persistence>
