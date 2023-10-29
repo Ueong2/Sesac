@@ -1,9 +1,0 @@
-INDEX VERSION 1.131
-C:\sesac_workspace\4.spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2183830719.index
-\step08mouseexercise\src\main\java
-C:\sesac_workspace\4.spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\403899027.index
-\step07springmvcoverview\src\main\java
-C:\sesac_workspace\4.spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3473467824.index
-\step08mouseexercise\src\main\java
-C:\sesac_workspace\4.spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1255959225.index
-\step08exercise\src\main\java
