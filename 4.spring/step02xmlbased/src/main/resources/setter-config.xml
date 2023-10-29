@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 가져오는 링크
+https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html -->
+
+<!-- bean : 서비스에서 사용되는 비즈니스 객체(현재 이 맥락에서는 TapeReader, Tape) -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 
+    	id : 해당 bean의 고유한 이름
+    	class : 해당 bean의 타입(패키지 포함 풀네임)
+     -->
+    <bean id="tapeReader" class="dev.spring.step01setter.TapeReader">
+    	<property name="tape" ref="tape"/> <!--  tape 객체를 reference -->
+    </bean>
+    <bean id="tape" class="dev.spring.step01setter.Tape">
+    	<property name="name" value="22"/>
+    	<property name="worked" value="true"/> <!-- isworked 에서 is는 자동으로 설정되므로 worked만 써준다 -->
+    </bean>
+</beans>
