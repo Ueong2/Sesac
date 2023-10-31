@@ -94,4 +94,25 @@ public class OwnerController {
             return "redirect:/owners/" + savedOwner.getId(); //{ownerId}로 전송
         }
     }
+
+    // Owner 업데이트 페이지 이동
+    @GetMapping("/{ownerId}/edit")
+    public String initUpdateOwnerForm(@PathVariable Long ownerId, Model model) {
+
+        model.addAttribute(ownerService.findById(ownerId));
+
+        return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
+    }
+
+    // Owner 업데이트 처리
+    @PostMapping("/{ownerId}/edit")
+    public String processUpdateOwnerForm(@Validated Owner owner, BindingResult result, @PathVariable Long ownerId) {
+        if (result.hasErrors()) {
+            return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
+        } else {
+            owner.setId(ownerId);
+            Owner savedOwner = ownerService.save(owner);
+            return "redirect:/owners/" + savedOwner.getId();
+        }
+    }
 }
